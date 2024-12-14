@@ -1,0 +1,14 @@
+server:
+  port: 8081  # Port for Limits Service
+
+limits:
+  api:
+    maxRequests: 1000  # Max requests allowed in the time window
+    timeWindow: 3600   # Time window in seconds (e.g., 1 hour)
+
+# Optionally, connect to Spring Cloud Config server to fetch configuration
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888  # Config Server URL
+      name: limits-service  # Name of the configuration file
